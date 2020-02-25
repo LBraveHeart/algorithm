@@ -36,9 +36,9 @@ public class No69 {
     }
 
     public int mySqrt(int x) {
-        Double aDouble = new Double(Math.sqrt(x));
+        double aDouble = Math.sqrt(x);
 
 
-        return aDouble.intValue();
+        return (int) aDouble;
     }
 }

@@ -25,24 +25,6 @@ public class No104 {
         System.out.println(Math.log(16));
     }
 
-    /*public int maxDepth(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
-        getValueByNode(root, list);
-
-
-        int log = (int) Math.log(list.size() + 1);
-        return log;
-    }*/
-
-    public void getValueByNode(TreeNode p, List<Integer> list) {
-        if (p == null) {
-            list.add(null);
-        }else {
-            list.add(p.val);
-            getValueByNode(p.left,list);
-            getValueByNode(p.right,list);
-        }
-    }
     public int maxDepth(TreeNode root) {
         return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
