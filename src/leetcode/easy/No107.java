@@ -15,28 +15,46 @@ public class No107 {
         treeNode.left = new TreeNode(9);
         treeNode.right = new TreeNode(20);
         treeNode.right.left = new TreeNode(15);
-        treeNode.right.right= new TreeNode(7);
-
-        List<Integer> list = new ArrayList<>();
-
+        treeNode.right.right = new TreeNode(7);
         No107 no107 = new No107();
-        no107.getValueByNode(treeNode, list);
+
+
+        List<List<Integer>> list = no107.levelOrderBottom(treeNode);
+
 
         System.out.println(list);
-
 
     }
 
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
-
-        return null;
+        List<List<Integer>> list = new ArrayList<>();
+        List<Integer> list1 = new ArrayList<>();
+        if (root != null) {
+            list1.add(root.val);
+            list.add(list1);
+        }
+        levelOrderBottom(root, list);
+        List<List<Integer>> newList = new ArrayList<>();
+        for (int i = list.size() - 1; i >= 0; i--) {
+            newList.add(list.get(i));
+        }
+        return newList;
     }
 
-    private void getValueByNode(TreeNode p, List<Integer> list) {
-        if (p != null) {
-            list.add(p.val);
-            getValueByNode(p.left,list);
-            getValueByNode(p.right,list);
+    public void levelOrderBottom(TreeNode root, List<List<Integer>> list) {
+        List<Integer> list1 = new ArrayList<>();
+
+        if (root.left != null) {
+            list1.add(root.left.val);
+            list.add(list1);
+            levelOrderBottom(root.left, list);
+        }
+        if (root.right != null) {
+            list1.add(root.right.val);
+            if (list1.size() != 2) {
+                list.add(list1);
+            }
+            levelOrderBottom(root.right, list);
         }
     }
 
@@ -44,6 +62,7 @@ public class No107 {
         int val;
         TreeNode left;
         TreeNode right;
+
         TreeNode(int x) {
             val = x;
         }
