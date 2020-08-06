@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.easy.step3;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,22 +6,21 @@ import java.util.List;
 
 /**
  * @author: liuyy
- * @date: 2020/6/24 17:37
+ * @date: 2020/6/22 17:23
  */
-public class No119 {
+public class No118 {
     public static void main(String[] args) {
-        No119 no119 = new No119();
-        List<Integer> row = no119.getRow(7);
-        System.out.println(row);
+        No118 no118 = new No118();
+        System.out.println(no118.generate(7));
 
     }
-    public List<Integer> getRow(int rowIndex) {
-        rowIndex = rowIndex + 1;
-        if (rowIndex == 0) {
+
+    public List<List<Integer>> generate(int numRows) {
+        if (numRows == 0) {
             return Collections.emptyList();
         }
         List<List<Integer>> lists = new ArrayList<>();
-        for (int i = 0; i < rowIndex; i++) {
+        for (int i = 0; i < numRows; i++) {
             if (i == 0) {
                 lists.add(Collections.singletonList(1));
                 continue;
@@ -44,6 +43,6 @@ public class No119 {
             }
             lists.add(list);
         }
-        return lists.get(rowIndex - 1);
+        return lists;
     }
 }

@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.easy.step4;
 
 import java.math.BigInteger;
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.easy.step4;
 
 /**
  * @author: liuyy
@@ -12,7 +12,7 @@ public class No190 {
     public int reverseBits(int n) {
 
         String string = Integer.toBinaryString(n);
-
+        System.out.println(string);
         StringBuilder sb = new StringBuilder();
         char[] chars = string.toCharArray();
         for (int i = chars.length - 1; i >= 0; i--) {

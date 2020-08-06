@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.easy.step3;
 
 /**
  * @author: liuyy

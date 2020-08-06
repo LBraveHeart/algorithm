@@ -1,8 +1,4 @@
-package leetcode.easy;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
+package leetcode.easy.step3;
 
 /**
  * @author: liuyy

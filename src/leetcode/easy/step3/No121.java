@@ -1,6 +1,4 @@
-package leetcode.easy;
-
-import java.nio.channels.Pipe;
+package leetcode.easy.step3;
 
 /**
  * @Author: liuyy
