@@ -1,9 +1,9 @@
 package leetcode.easy;
 
-import com.sun.org.apache.regexp.internal.RE;
-
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author: liuyy
@@ -17,13 +17,12 @@ public class No217 {
     }
 
     public boolean containsDuplicate(int[] nums) {
-        List<Integer> list = new ArrayList<>();
+        Set<Integer> set = new HashSet<>(nums.length);
         for (int num : nums) {
-            if (list.contains(num)) {
+            if (set.contains(num)) {
                 return true;
-            } else {
-                list.add(num);
             }
+            set.add(num);
         }
         return false;
     }
